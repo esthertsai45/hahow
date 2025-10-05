@@ -10,13 +10,15 @@ swapi_api = SwapiAPI()
 
 
 def get_how_many_species_in_film(film_id: int) -> int:
-    film = swapi_api.get_films_data(film_id)
-    return len(film["species"])
+    films = swapi_api.get_films_data(film_id)
+    return len(films[0]["species"])
 
 
 print(f"Q1:有多少不同種族的人出現在第六部: {get_how_many_species_in_film(6)}\n")
 
 # Q2 請依據電影集數去排序電影名字
+
+
 def sort_by_episode() -> list[dict]:
     films = swapi_api.get_films_data()
     sorted_films = sorted(films, key=lambda x: x["episode_id"])
