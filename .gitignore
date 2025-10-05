@@ -1,1 +1,15 @@
+# Byte-compiled / optimized / DLL files
 __pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+.Python
+build/
+
+.vscode
+reports/
+pytest-report.xml
+.python-version
+pytestdebug.log
+.DS_Store
