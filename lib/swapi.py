@@ -1,4 +1,6 @@
 from lib.util import Paginator
+from typing import Optional
+
 
 class SwapiAPI:
     """
@@ -14,7 +16,7 @@ class SwapiAPI:
         self.base_url = "https://swapi.info/api"
         self.paginator = Paginator()
 
-    def get_films_data(self, index: int = None):
+    def get_films_data(self, index: Optional[int] = None):
         if isinstance(index, int) and index < 0:
             raise ValueError("Index must be positive")
         if index is None:
@@ -23,7 +25,7 @@ class SwapiAPI:
             url = f"{self.base_url}/films/{index}/"
         return self.paginator.fetch_all(url)
 
-    def get_people_data(self, index: int = None):
+    def get_people_data(self, index: Optional[int] = None):
         if isinstance(index, int) and index < 0:
             raise ValueError("Index must be positive")
         if index is None:
@@ -32,8 +34,7 @@ class SwapiAPI:
             url = f"{self.base_url}/people/{index}/"
         return self.paginator.fetch_all(url)
 
-
-    def get_planets_data(self, index: int = None):
+    def get_planets_data(self, index: Optional[int] = None):
         if isinstance(index, int) and index < 0:
             raise ValueError("Index must be positive")
         if index is None:
@@ -42,7 +43,7 @@ class SwapiAPI:
             url = f"{self.base_url}/planets/{index}/"
         return self.paginator.fetch_all(url)
 
-    def get_species_data(self, index: int = None):
+    def get_species_data(self, index: Optional[int] = None):
         if isinstance(index, int) and index < 0:
             raise ValueError("Index must be positive")
         if index is None:
@@ -51,7 +52,7 @@ class SwapiAPI:
             url = f"{self.base_url}/species/{index}/"
         return self.paginator.fetch_all(url)
 
-    def get_vehicles_data(self, index: int = None):
+    def get_vehicles_data(self, index: Optional[int] = None):
         if isinstance(index, int) and index < 0:
             raise ValueError("Index must be positive")
         if index is None:
@@ -60,7 +61,7 @@ class SwapiAPI:
             url = f"{self.base_url}/vehicles/{index}/"
         return self.paginator.fetch_all(url)
 
-    def get_starships_data(self, index: int = None):
+    def get_starships_data(self, index: Optional[int] = None):
         if isinstance(index, int) and index < 0:
             raise ValueError("Index must be positive")
         if index is None:

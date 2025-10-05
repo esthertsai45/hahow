@@ -1,6 +1,7 @@
-from lib.swapi import SwapiAPI
-import logging
 import json
+import logging
+
+from lib.swapi import SwapiAPI
 
 logger = logging.getLogger(__name__)
 
@@ -24,10 +25,7 @@ def sort_by_episode() -> list[dict]:
     sorted_films = sorted(films, key=lambda x: x["episode_id"])
     result = []
     for film in sorted_films:
-        result.append({
-            'episode_id': film["episode_id"],
-            'title': film["title"]
-        })
+        result.append({"episode_id": film["episode_id"], "title": film["title"]})
     return result
 
 
@@ -42,14 +40,19 @@ def get_vehicles_with_power_over_1000() -> list[dict]:
     for vehicle in vehicles:
         try:
             if int(vehicle["max_atmosphering_speed"]) > 1000:
-                result.append({
-                    'name': vehicle['name'],
-                    'max_speed': int(vehicle["max_atmosphering_speed"])
-                })
-        except ValueError:  # handle the case when the max_atmosphering_speed is not a number or unknown
+                result.append(
+                    {
+                        "name": vehicle["name"],
+                        "max_speed": int(vehicle["max_atmosphering_speed"]),
+                    }
+                )
+        except (
+            ValueError
+        ):  # handle the case when the max_atmosphering_speed is not a number or unknown
             pass
     return result
 
 
 print(
-    f"Q3:請幫我挑出電影裡所有的車輛，馬力超過１０００的。: {json.dumps(get_vehicles_with_power_over_1000(), indent=4)}")
+    f"Q3:請幫我挑出電影裡所有的車輛，馬力超過１０００的。: {json.dumps(get_vehicles_with_power_over_1000(), indent=4)}"
+)
