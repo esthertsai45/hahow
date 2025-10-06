@@ -1,5 +1,6 @@
-from lib.util import Paginator
 from typing import Optional
+
+from lib.util import Paginator
 
 
 class SwapiAPI:

@@ -29,12 +29,14 @@ class TestSwapi:
             "Revenge of the Sith",
             "A New Hope",
             "The Empire Strikes Back",
-            "Return of the Jedi"
+            "Return of the Jedi",
         ]
         films = swapi_api.get_films_data()
         sorted_films = sorted(films, key=lambda x: x["episode_id"])
         result = [film["title"] for film in sorted_films]
-        assert set(result) == set(EXPECTED_TITLES), f"Expected {EXPECTED_TITLES} but got {result}"
+        assert set(result) == set(
+            EXPECTED_TITLES
+        ), f"Expected {EXPECTED_TITLES} but got {result}"
 
     def test_vehicles_with_power_over_1000(self):
         """
@@ -47,7 +49,7 @@ class TestSwapi:
             "T-16 skyhopper",
             "TIE/LN starfighter",
             "Vulture Droid",
-            "Droid tri-fighter"
+            "Droid tri-fighter",
         ]
         vehicles = swapi_api.get_vehicles_data()
         result = []
@@ -57,5 +59,6 @@ class TestSwapi:
                     result.append(vehicle["name"])
             except ValueError:
                 pass
-        assert set(result) == set(EXPECTED_FAST_VEHICLE_NAMES), \
-            f"Expected {EXPECTED_FAST_VEHICLE_NAMES} but got {result}"
+        assert set(result) == set(
+            EXPECTED_FAST_VEHICLE_NAMES
+        ), f"Expected {EXPECTED_FAST_VEHICLE_NAMES} but got {result}"
