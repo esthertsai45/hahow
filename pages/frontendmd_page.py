@@ -32,3 +32,8 @@ class FrontendMDPage(Base):
         self.take_screenshot("wireframe.png")
         return (("/hahow/hahow-recruit/raw/master/assets/hero-list-page.png" in image_url1) and
                 ("/hahow/hahow-recruit/raw/master/assets/hero-profile-page.png" in image_url2))
+
+    def check_the_latest_commitor(self):
+        latest_commit_container = self.find_element(*Locators.LATEST_COMMIT_CONTAINER_XPATH)
+        commitor_name = latest_commit_container.find_element(*Locators.COMMITOR_NAME_XPATH)
+        return commitor_name.text

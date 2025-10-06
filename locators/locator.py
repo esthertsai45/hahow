@@ -9,3 +9,5 @@ class Locators:
     FRONTEND_MD_PAGE = (By.ID, "user-content-hahow-frontend-engineer-徵才小專案")
     IMAGE1_XPATH = (By.XPATH, "//img[contains(@src, 'assets/hero-list-page.png')]")
     IMAGE2_XPATH = (By.XPATH, "//img[contains(@src, 'assets/hero-profile-page.png')]")
+    LATEST_COMMIT_CONTAINER_XPATH = (By.XPATH, "//div[@data-testid='latest-commit']")
+    COMMITOR_NAME_XPATH = (By.XPATH, "//div[@data-testid='author-avatar']/a[2]")
