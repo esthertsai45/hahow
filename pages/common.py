@@ -11,9 +11,8 @@ from selenium.webdriver.support.ui import Select, WebDriverWait
 class Base:
     def __init__(self, driver) -> None:
         self.driver = driver
-        self.top_pendding = 50
 
-    def __wait(self, timeout=5) -> WebDriverWait:
+    def __wait(self, timeout=15) -> WebDriverWait:
         return WebDriverWait(self.driver, timeout)
 
     def go_to_link(self, url):
