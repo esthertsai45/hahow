@@ -29,7 +29,6 @@ class FrontendMDPage(Base):
         wireframe_img2_element = self.find_element(*Locators.IMAGE2_XPATH)
         image_url2 = wireframe_img2_element.get_attribute("src")
         self.scroll_to_element_by_locator(*Locators.IMAGE1_XPATH)
-        self.take_screenshot("wireframe.png")
         return (("/hahow/hahow-recruit/raw/master/assets/hero-list-page.png" in image_url1) and
                 ("/hahow/hahow-recruit/raw/master/assets/hero-profile-page.png" in image_url2))
 
