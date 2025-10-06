@@ -6,8 +6,6 @@ class Locators:
     CONTRIBUTORS_BLOCK = (By.XPATH, "//div[./h2/a[contains(text(), 'Contributors')]]")
     CONTRIBUTOR_LINKS = (By.CSS_SELECTOR, "ul.list-style-none > li > a")
     
-    # GitHub contributors page locators - updated based on actual DOM structure
-    CHART_READY_XPATH = (By.XPATH, "//li[contains(@class, 'Index-module__chartListItem')][1]//div[@data-highcharts-chart and @aria-label]")
-    CONTRIBUTOR_LIST_ITEM_XPATH = (By.XPATH, "//ul[contains(@class, 'Index-module__chartList--RemPq')]/li")
-    CONTRIBUTOR_NAME = (By.XPATH, ".//h2//a")   # can't use span[@class='sr-only'] because it's not always present (Screen Reader Only)
-    
+    FRONTEND_MD_PAGE = (By.ID, "user-content-hahow-frontend-engineer-徵才小專案")
+    IMAGE1_XPATH = (By.XPATH, "//img[contains(@src, 'assets/hero-list-page.png')]")
+    IMAGE2_XPATH = (By.XPATH, "//img[contains(@src, 'assets/hero-profile-page.png')]")

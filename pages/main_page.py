@@ -4,7 +4,7 @@ from selenium.webdriver.common.keys import Keys
 
 from locators.locator import Locators
 from pages.common import Base
-from pages.contributor_page import ContributorPage
+from pages.frontendmd_page import FrontendMDPage
 
 logger = logging.getLogger(__name__)
 
@@ -28,3 +28,7 @@ class MainPage(Base):
             contributors.append(name)
         print(f"{contributors}")
         return contributors
+    
+    def go_to_frontend_md_page(self):
+        self.click_element_by_locator(*Locators.FRONTEND_MD_PAGE)
+        return FrontendMDPage(self.driver)

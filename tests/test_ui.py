@@ -1,6 +1,6 @@
 import time
-from pages import contributor_page
-from pages.main_page import MainPage, ContributorPage
+from pages.main_page import MainPage
+from pages.frontendmd_page import FrontendMDPage
 
 class TestGitHubUI:
     def test_find_contributors(self, driver):
@@ -9,3 +9,7 @@ class TestGitHubUI:
         result = page.find_contributors()
         assert len(result) == 14
         
+    def test_is_wireframe_image_in_the_page(self, driver):
+        page = FrontendMDPage(driver)
+        page.load("https://github.com/hahow/hahow-recruit/blob/master/frontend.md")
+        assert page.check_the_image_exists()
